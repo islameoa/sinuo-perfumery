@@ -1,0 +1,60 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+.App {
+  height: 200vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  position: absolute;
+  top: 20%;
+  z-index: 1;
+}
+
+canvas {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: 0;
+}
+
+.scroll-container {
+  width: 100vw;
+  height: 200vh;
+}
+
+/* styles.css */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  overflow: hidden; /* Prevent unwanted scrollbars */
+  background: linear-gradient(180deg, #f8f9fa, #e0e4e7); /* Light gradient */
+}
+
+#logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  z-index: 2; /* Keep above the 3D model */
+  transition: opacity 0.5s ease, transform 0.8s ease;
+}
+
+.hidden {
+  opacity: 0;
+  transform: translate(-50%, -60%);
+}

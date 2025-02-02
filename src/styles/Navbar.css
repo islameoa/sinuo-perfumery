@@ -1,0 +1,32 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 3rem;
+    background-color: #f8f5f0;
+    border-bottom: 1px solid #e0ded9;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+  }
+  
+  .logo img {
+    height: 70px;
+    object-fit: cover;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .nav-links li {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  
+  .nav-links li:hover {
+    color: #a09c91;
+    cursor: pointer;
+  }
