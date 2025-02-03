@@ -2,10 +2,11 @@ import React, { useEffect } from "react";
 import { gsap } from "gsap";
 import Lenis from 'lenis';
 import "../styles/Home.css";
-import PerfumeBottle from './PerfumeBottle';
-// const PerfumeBottle = dynamic(() => import('./PerfumeBottle'), {
-//   //loading: () => <p>Loading...</p>,
-//   ssr: false
+import Scene from './Scene';
+
+//TODO:Corregir error importando dynamic
+// const Scene = dynamic(() => import('./Scene'), {
+//     ssr: false,
 // })
 
 const Home = () => {
@@ -28,6 +29,9 @@ const Home = () => {
 
   return (
     <div className='columns-1 ...'>
+      <div className="h-screen flex items-center justify-center">
+        <Scene />
+      </div>
       <div className='home text-center leading-none'>
         <div className="hero">
           <img src="/assets/images/hero.jpg" alt="Hero"/>
@@ -35,9 +39,6 @@ const Home = () => {
             <h1 className="hero-text">Discover the Essence of Elegance</h1>
           </div>
         </div>
-      </div>
-      <div className="h-screen flex items-center justify-center">
-        <PerfumeBottle />
       </div>
     </div>
   );

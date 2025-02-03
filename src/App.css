@@ -1,7 +1,6 @@
 body {
   margin: 0;
   overflow: hidden;
-  font-family: Arial, sans-serif;
 }
 
 .App {
@@ -36,7 +35,6 @@ canvas {
 body {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
   overflow: hidden; /* Prevent unwanted scrollbars */
   background: linear-gradient(180deg, #f8f9fa, #e0e4e7); /* Light gradient */
 }
