@@ -3,7 +3,7 @@ import { Canvas } from '@react-three/fiber'
 import Model from './Model';
 import { Environment } from '@react-three/drei'
 
-export default function Index() {
+export default function DistortedGlass() {
   return (
     <Canvas style={{background: '#000000'}}>
         <Model />
