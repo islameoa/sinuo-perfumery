@@ -5,7 +5,7 @@ import { Environment } from '@react-three/drei'
 
 export default function DistortedGlass() {
   return (
-    <Canvas style={{background: '#000000'}}>
+    <Canvas style={{background: '#b23a48'}}>
         <Model />
         <directionalLight intensity={2} position={[0, 2, 3]}/>
         <Environment preset="city" />
