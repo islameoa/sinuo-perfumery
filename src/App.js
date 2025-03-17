@@ -6,8 +6,19 @@ import About from "./components/About";
 import Products from "./components/Products";
 import Contact from "./components/Contact";
 import Header from "./components/Header/Header";
+import Lenis from 'lenis';
+import { useEffect } from "react";
 
 function App() {
+  useEffect( () => {
+    const lenis = new Lenis()
+    function raf(time) {
+      lenis.raf(time)
+      requestAnimationFrame(raf)
+    }
+    requestAnimationFrame(raf)
+  }, [])
+
   return (
     <Router>
       {/* <Navbar /> */}

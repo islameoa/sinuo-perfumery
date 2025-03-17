@@ -44,7 +44,7 @@ export default function Index() {
       <div className={styles.wrapper}>
         <div className={styles.container}>
           <Body links={links} selectedLink={selectedLink} setSelectedLink={setSelectedLink}/>
-          <Footer />
+          {/* <Footer /> */}
         </div>
         <Image src={links[selectedLink.index].src} isActive={selectedLink.isActive}/>
       </div>

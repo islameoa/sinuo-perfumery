@@ -1,6 +1,5 @@
 'use client';
 import styles from './style.module.scss';
-// import Link from 'next/link';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { opacity, background } from './anim';
