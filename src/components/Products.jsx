@@ -2,6 +2,7 @@ import React from "react";
 import "../styles/Products.css";
 import { useEffect } from "react";
 import { gsap } from "gsap";
+import DistortedGlass from "./PerfumeBottle/DistortedGlass";
 
 const Products = () => {
     useEffect(() => {
@@ -45,6 +46,9 @@ const Products = () => {
                     </div>
                     <p>Luxury Fragrance 5</p>
                 </div>
+                {/* <div className="h-screen flex items-center justify-center">
+                    <DistortedGlass />
+                </div> */}
             </div>
         </section>
     );

@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+
+.home h1, .home button {
+  font-family: "EB Garamond", serif !important;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.home button{
+  font-family: 'Helvetica Neue' !important;
+  font-style: normal;
+  background-color: #E34D5C;
+}
