@@ -6,30 +6,41 @@ import About from "./components/About";
 import Products from "./components/Products";
 import Contact from "./components/Contact";
 import Header from "./components/Header/Header";
+import Prelude from "./components/prelude/Prelude";
 import Lenis from 'lenis';
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 function App() {
-  useEffect( () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
     const lenis = new Lenis()
     function raf(time) {
       lenis.raf(time)
       requestAnimationFrame(raf)
     }
     requestAnimationFrame(raf)
-  }, [])
+  }, []);
+
+  const handlePreludeComplete = () => {
+    setIsLoading(false);
+  };
 
   return (
     <Router>
-      {/* <Navbar /> */}
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/shop" element={<Products />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
-      <Footer />
+      {/* Preloader que desaparece cuando termine */}
+      <AnimatePresence>
+        {isLoading && <Prelude onComplete={handlePreludeComplete} />}
+      </AnimatePresence>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/shop" element={<Products />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+        <Footer />
     </Router>
   );
 }
