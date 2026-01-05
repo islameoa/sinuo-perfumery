@@ -11,27 +11,27 @@ const links = [
   {
     title: "Home",
     href: "/",
-    src: "home.png"
+    src: "sinuo1.jpeg"
   },
   {
     title: "Shop",
     href: "/shop",
-    src: "shop.png"
+    src: "sinuoCherryDrink.png"
   },
   {
     title: "About Us",
     href: "/about",
-    src: "home.png"
+    src: "sinuoBack.jpeg"
   },
   {
     title: "Lookbook",
     href: "/lookbook",
-    src: "lookbook.png"
+    src: "sinuoFather.png"
   },
   {
     title: "Contact",
     href: "/contact",
-    src: "contact.png"
+    src: "sinuoRivers.png"
   }
 ]
 

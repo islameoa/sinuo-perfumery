@@ -2,6 +2,7 @@ import React from "react";
 import "../styles/Home.css";
 import { useScroll, useTransform, motion } from 'framer-motion';
 import { useRef } from 'react';
+import { Link } from 'react-router-dom';
 
 //TODO:Corregir error importando dynamic
 // const Scene = dynamic(() => import('./Scene'), {
@@ -30,21 +31,32 @@ export default function Home() {
     <div className='home columns-1 ...' style={{backgroundColor: "#8c2f39"}}>
       <div className='home relative w-full h-screen overflow-hidden'>
         <video className='absolute top-0 left-0 w-full h-full object-cover' autoPlay loop muted >
-          <source src="assets/videos/sinuoFirstCommercial.mp4" type="video/mp4" />
+          <source src="assets/videos/sinuoCherryOud.mp4" type="video/mp4" />
           Sinuo - The Art of Perfume Crafting
         </video>
         <div className='absolute top-0 left-0 w-full h-full bg-black bg-opacity-40'></div>
         <div className='absolute inset-0 flex flex-col items-center justify-center text-center text-white'>
           <img src='/assets/images/LogoDefBigWhite.svg' alt='Logo sinuo' className="w-1/4 h-1/2" />
-          <h1 className='text-3xl mb-6'>Flowing with emotion</h1>
-          <button className='px-6 py-3 text-white rounded-lg hover:bg-gray-300 transition uppercase'>
+          <h1 className='text-3xl mb-6'>Flowing with emotion</h1>          
+          <Link
+            to="/shop"
+            className="
+              px-6 py-3 rounded-lg uppercase inline-flex items-center justify-center
+              bg-[#8c2f39] text-white border border-white/15
+              transition-all duration-300 ease-out
+              hover:bg-[#dfcfc0] hover:text-black
+              hover:-translate-y-[1px] hover:shadow-lg
+              active:translate-y-0 active:shadow-md
+              focus:outline-none focus:ring-2 focus:ring-white/30 focus:ring-offset-2 focus:ring-offset-[#8c2f39]
+            "
+          >
             Discover now
-          </button>
+          </Link>
         </div>
       </div>
       <div className='h-screen overflow-hidden'>
         <motion.div style={{y}} className='relative h-full'>
-        <img src='/assets/images/frascosinuo.jpg' alt='first main cologne' className='w-full h-full object-cover object-center'/>
+        <img src='/assets/images/packagingClean.png' alt='first main cologne' className='w-full h-full object-cover object-center'/>
         </motion.div>
       </div>
       <div className='flex justify-center my-40'>
@@ -66,7 +78,7 @@ export default function Home() {
         <div className='fixed top-0 left-0 w-full h-screen z-0 overflow-hidden'>
           <motion.div style={{ y: y1 }} className='w-full h-screen'>
             <img
-              src='/assets/images/4.jpg'
+              src='/assets/images/sinuoFatherLogo.png'
               alt='main collection'
               className='w-full h-full object-cover object-center'
             />
