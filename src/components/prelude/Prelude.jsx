@@ -34,7 +34,7 @@ const Prelude = ({
           transition={{ duration: exitDuration, ease: "easeInOut" }}
           className="fixed inset-0 z-[9999] flex items-center justify-center"
           style={{
-            background: "linear-gradient(180deg, #dfcfc0 0%, #dfdfdf 100%)",
+            backgroundColor: '#faf6ef'
           }}
         >
           {/* Grano sutil */}

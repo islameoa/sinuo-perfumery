@@ -1,0 +1,11 @@
+{
+    "name": "sinuo-api",
+    "type": "module",
+    "main": "server.js",
+    "scripts": {
+        "dev": "node server.js"
+    },
+    "dependencies": {
+        "express": "^4.19.2"
+    }
+}

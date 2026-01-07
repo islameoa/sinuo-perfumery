@@ -9,7 +9,7 @@ const Footer = () => {
     >
       <div className='relative h-[calc(100vh+300px)] -top-[100vh]'>
         <div className='h-[300px] sticky top-[calc(100vh-300px)] text-white'>
-          <div className='py-8 px-12 h-full w-full flex flex-col justify-between' style={{background: '#8c2f39'}}>
+          <div className='py-8 px-12 h-full w-full flex flex-col justify-between' style={{background: '#4e0808'}}>
             <Section1 />
             <Section2 />
           </div>

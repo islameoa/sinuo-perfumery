@@ -12,7 +12,7 @@ function FitOnce() {
 export default function DistortedGlass() {
   return (
     <Canvas
-      style={{ background: '#8c2f39', width: '100%', height: '100%' }}
+      style={{ background: '#4e0808', width: '100%', height: '100%' }}
       camera={{ position: [0, 0, 4], fov: 45, near: 0.01, far: 1000 }}
     >
       <directionalLight intensity={2} position={[0, 2, 3]} />

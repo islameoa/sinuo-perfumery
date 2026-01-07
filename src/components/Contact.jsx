@@ -48,7 +48,7 @@ export default function Contact() {
   return (
     <div className="min-h-screen px-4 py-16" style={{
       color: "white",
-      backgroundColor: "#8c2f39"
+      backgroundColor: "#4e0808"
     }}>
       <div className="max-w-7xl mx-auto mt-36 md:mt-20">
         <header className="mb-16">

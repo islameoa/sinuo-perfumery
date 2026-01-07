@@ -28,7 +28,7 @@ export default function Home() {
   const y1 = useTransform(scrollYProgress1, [0, 1], ["0%", "10%"]);
 
   return (
-    <div className='home columns-1 ...' style={{backgroundColor: "#8c2f39"}}>
+    <div className='home columns-1 ...' style={{backgroundColor: "#4e0808"}}>
       <div className='home relative w-full h-screen overflow-hidden'>
         <video className='absolute top-0 left-0 w-full h-full object-cover' autoPlay loop muted >
           <source src="assets/videos/sinuoCherryOud.mp4" type="video/mp4" />
@@ -37,17 +37,17 @@ export default function Home() {
         <div className='absolute top-0 left-0 w-full h-full bg-black bg-opacity-40'></div>
         <div className='absolute inset-0 flex flex-col items-center justify-center text-center text-white'>
           <img src='/assets/images/LogoDefBigWhite.svg' alt='Logo sinuo' className="w-1/4 h-1/2" />
-          <h1 className='text-3xl mb-6'>Flowing with emotion</h1>          
+          <h1 className='text-3xl mb-6'>There's not only one way</h1>          
           <Link
             to="/shop"
             className="
               px-6 py-3 rounded-lg uppercase inline-flex items-center justify-center
-              bg-[#8c2f39] text-white border border-white/15
+              bg-[#4e0808] text-white border border-white/15
               transition-all duration-300 ease-out
-              hover:bg-[#dfcfc0] hover:text-black
+              hover:bg-[#321f12]
               hover:-translate-y-[1px] hover:shadow-lg
               active:translate-y-0 active:shadow-md
-              focus:outline-none focus:ring-2 focus:ring-white/30 focus:ring-offset-2 focus:ring-offset-[#8c2f39]
+              focus:outline-none focus:ring-2 focus:ring-white/30 focus:ring-offset-2 focus:ring-offset-[#4e0808]
             "
           >
             Discover now
@@ -60,7 +60,7 @@ export default function Home() {
         </motion.div>
       </div>
       <div className='flex justify-center my-40'>
-        <p className='text-[5vw] sm:text-[4vw] md:text-[3vw] uppercase text-center max-w-[50vw] leading-none text-white'>"Born between two worlds, Sinuo is the breath between roots and future — fluid, undefined, unapologetically whole."</p>
+        <p className='text-[5vw] sm:text-[4vw] md:text-[3vw] uppercase text-center max-w-[50vw] leading-none text-white'>"Reflecting roots and future, embracing the diaspora experience and encouraging individuality against societal norms."</p>
       </div>
       <div
         ref={container1} 
@@ -69,10 +69,10 @@ export default function Home() {
       >
         <div className='relative z-10 p-20 mix-blend-difference text-white w-full h-full flex flex-col justify-between'>
           <p className='text-[4vw] sm:text-[3vw] md:text-[2vw] w-full md:w-[50vw] self-end uppercase mix-blend-difference'>
-            A memory in motion — a whisper from the past, and a gesture toward what's yet to come.
+            SINUO blends art and creation, symbolizing the merging of two worlds through scent.
           </p>
-          <p className='text-[7vw] sm:text-[6vw] md:text-[5vw] uppercase mix-blend-difference'>
-            This is not rebellion,<br />nor conformity — it's presence.
+          <p className='text-[6vw] sm:text-[5vw] md:text-[4vw] uppercase mix-blend-difference'>
+            Elegance, culture, irony<br />and the freedom to pursue one's path.
           </p>
         </div>
         <div className='fixed top-0 left-0 w-full h-screen z-0 overflow-hidden'>

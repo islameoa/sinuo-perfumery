@@ -75,7 +75,7 @@ const Products = () => {
   };
 
   return (
-    <section className="bg-[#8c2f39]">
+    <section className="bg-[#4e0808]">
       <div className="flex flex-col md:flex-row h-screen">
         <div className="w-full md:w-1/2 h-1/2 md:h-full flex items-center justify-center">
           <DistortedGlass />
