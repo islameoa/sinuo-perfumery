@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from "react";
 import "../styles/Products.css";
 import DistortedGlass from "./PerfumeBottle/DistortedGlass";
-import { useCart } from "../components/cart/CartContext";
+import { useCart } from "./cart/CartContext";
 import Gallery from "./Gallery";
 
 const AccordionItem = ({ title, isOpen, onToggle, children }) => {

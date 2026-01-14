@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/Footer.css";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -41,17 +42,17 @@ const Nav = () => {
     <div className='flex shrink-0 gap-20'>
         <div className='flex flex-col gap-2'>
             <h3 className="mb-2 uppercase">about us</h3>
-            <p>Where to find us</p>
-            <p>FAQs</p>
-            <p>Our Mission</p>
-            <p>Contact Us</p>
+            <Link to="/where-to-find-us">Where to find us</Link>
+            <Link to="/faqs">FAQs</Link>
+            <Link to="/our-mission">Our Mission</Link>
+            <Link to="/contact">Contact Us</Link>
         </div>
         <div className='flex flex-col gap-2'>
-        <h3 className="mb-2 uppercase">client care</h3>
-            <p>Shipping</p>
-            <p>Legal notice</p>
-            <p>Privacy</p>
-            <p>Cookies</p>
+          <h3 className="mb-2 uppercase">client care</h3>
+          <Link to="/shipping">Shipping</Link>
+          <Link to="/legal-notice">Legal notice</Link>
+          <Link to="/privacy">Privacy</Link>
+          <Link to="/cookies">Cookies</Link>
         </div>
     </div>
   )

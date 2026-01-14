@@ -72,7 +72,7 @@ export default function About() {
       {/* BIG QUOTE (simple / loud typography) */}
       <div className="flex justify-center my-40 px-6">
         <p className="text-[6vw] sm:text-[5vw] md:text-[3.4vw] uppercase text-center max-w-[70vw] leading-none text-white">
-          "A worldwide reference for young people who live between cultures"
+          A worldwide reference for young people who live between cultures
           <br />
           <br />
           Fragrances that merge worlds and bring memories back.
@@ -80,7 +80,7 @@ export default function About() {
       </div>
 
       {/* SPLIT: image left, manifesto right */}
-      <div className="flex flex-col md:flex-row h-screen sm:pb-20">
+      <div className="flex flex-col md:flex-row h-screen pb-20 md:pb-0">
         <div className="w-full md:w-1/2 h-1/2 md:h-full overflow-hidden">
           <img
             src="/assets/images/packagingClean.png"
@@ -89,7 +89,7 @@ export default function About() {
           />
         </div>
 
-        <div className="w-full md:w-1/2 h-1/2 md:h-full flex items-center justify-center px-8 md:px-16 sm:pt-20">
+        <div className="w-full md:w-1/2 h-1/2 md:h-full flex items-center justify-center mb-10 pt-24 md:pt-0 px-8 md:px-16">
           <div className="max-w-xl">
             <p className="uppercase tracking-[0.35em] text-[14px] text-white/60 mb-6">
               Manifesto
@@ -242,6 +242,7 @@ export default function About() {
                   transition-all duration-300 ease-out
                   hover:bg-white/15
                   active:translate-y-0
+                  mb-9 md:mb-0
                 "
                 aria-label="Open sample CTA"
               >
