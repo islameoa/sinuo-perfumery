@@ -58,7 +58,7 @@ export default function About() {
               mt-10 px-6 py-3 rounded-lg uppercase inline-flex items-center justify-center
               bg-[#4e0808] text-white border border-white/15
               transition-all duration-300 ease-out
-              hover:bg-[#321f12]
+              hover:bg-transparent
               hover:-translate-y-[1px] hover:shadow-lg
               active:translate-y-0 active:shadow-md
               focus:outline-none focus:ring-2 focus:ring-white/30 focus:ring-offset-2 focus:ring-offset-black

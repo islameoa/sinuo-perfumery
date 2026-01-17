@@ -56,7 +56,7 @@ const Products = () => {
   const variants = useMemo(
     () => ({
       "2ml": { label: "2ml", price: 9 },
-      "100ml": { label: "100ml", price: 129 },
+      "100ml": { label: "100ml", price: 119 },
     }),
     []
   );
@@ -76,12 +76,12 @@ const Products = () => {
 
   return (
     <section className="bg-[#4e0808]">
-      <div className="flex flex-col md:flex-row h-screen">
-        <div className="w-full md:w-1/2 h-1/2 md:h-full flex items-center justify-center">
+      <div className="flex flex-col md:flex-row h-auto">
+        <div className="w-full md:w-1/2 h-[60vh] sm:h-screen flex items-center justify-center">
           <DistortedGlass />
         </div>
 
-        <div className="w-full md:w-1/2 h-1/2 md:h-full flex items-center justify-center p-8 md:p-20 product-item">
+        <div className="w-full md:w-1/2 flex h-auto items-center justify-center p-8 md:p-20 product-item">
           <div className="text-center md:text-left text-white max-w-md w-full">
             <h2 className="mb-10 text-4xl md:text-5xl uppercase">Sinuo Diaspora</h2>
 

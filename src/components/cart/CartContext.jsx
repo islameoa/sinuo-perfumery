@@ -1,23 +1,88 @@
-import React, { createContext, useContext, useMemo, useState } from "react";
+import React, { createContext, useContext, useMemo, useEffect, useState } from "react";
 
 const CartContext = createContext(null);
 
+const CART_STORAGE_KEY = "sinuo_cart_v1";
+const CART_TTL_DAYS = 30; // opcional
+
+function readCart() {
+  try {
+    const raw = localStorage.getItem(CART_STORAGE_KEY);
+    if (!raw) return [];
+
+    const parsed = JSON.parse(raw);
+    // soporta tanto array antiguo como {items,ts}
+    const items = Array.isArray(parsed) ? parsed : parsed?.items;
+    const ts = Array.isArray(parsed) ? null : parsed?.ts;
+
+    if (!Array.isArray(items)) return [];
+
+    // TTL opcional
+    if (ts) {
+      const ageMs = Date.now() - ts;
+      const ttlMs = CART_TTL_DAYS * 24 * 60 * 60 * 1000;
+      if (ageMs > ttlMs) {
+        localStorage.removeItem(CART_STORAGE_KEY);
+        return [];
+      }
+    }
+
+    // saneado mínimo
+    return items
+      .filter(Boolean)
+      .map((it) => ({
+        id: String(it.id || ""),
+        name: String(it.name || ""),
+        variant: it.variant ? String(it.variant) : "",
+        price: Number(it.price || 0),
+        qty: Math.max(1, Number(it.qty || 1)),
+      }))
+      .filter((it) => it.id && it.price >= 0);
+  } catch {
+    return [];
+  }
+}
+
+function writeCart(items) {
+  try {
+    localStorage.setItem(
+      CART_STORAGE_KEY,
+      JSON.stringify({ items, ts: Date.now() })
+    );
+  } catch {
+    // ignore
+  }
+}
+
 export function CartProvider({ children }) {
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState(() => {
+    // lazy init (solo 1 vez)
+    if (typeof window === "undefined") return [];
+    return readCart();
+  });
+
   const [isCartOpen, setIsCartOpen] = useState(false);
+
+  // ✅ Persistir cada cambio
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    writeCart(items);
+  }, [items]);
 
   const openCart = () => setIsCartOpen(true);
   const closeCart = () => setIsCartOpen(false);
   const toggleCart = () => setIsCartOpen((v) => !v);
 
   const addItem = (item) => {
-    // item: {id,name,variant,price,qty}
     setItems((prev) => {
       const key = `${item.id}__${item.variant || ""}`;
       const idx = prev.findIndex((p) => `${p.id}__${p.variant || ""}` === key);
-      if (idx === -1) return [...prev, { ...item, qty: item.qty ?? 1 }];
+      const qtyToAdd = item.qty ?? 1;
+
+      if (idx === -1) return [...prev, { ...item, qty: qtyToAdd }];
+
       const next = [...prev];
-      next[idx] = { ...next[idx], qty: next[idx].qty + (item.qty ?? 1) };
+      next[idx] = { ...next[idx], qty: next[idx].qty + qtyToAdd };
       return next;
     });
     openCart();
@@ -31,13 +96,10 @@ export function CartProvider({ children }) {
   const setQty = (id, variant, qty) => {
     const key = `${id}__${variant || ""}`;
     setItems((prev) =>
-      prev
-        .map((p) => {
-          const same = `${p.id}__${p.variant || ""}` === key;
-          if (!same) return p;
-          return { ...p, qty: Math.max(1, qty) };
-        })
-        .filter((p) => p.qty > 0)
+      prev.map((p) => {
+        const same = `${p.id}__${p.variant || ""}` === key;
+        return same ? { ...p, qty: Math.max(1, qty) } : p;
+      })
     );
   };
 
@@ -54,7 +116,9 @@ export function CartProvider({ children }) {
     const key = `${id}__${variant || ""}`;
     setItems((prev) =>
       prev.map((p) =>
-        `${p.id}__${p.variant || ""}` === key ? { ...p, qty: Math.max(1, p.qty - 1) } : p
+        `${p.id}__${p.variant || ""}` === key
+          ? { ...p, qty: Math.max(1, p.qty - 1) }
+          : p
       )
     );
   };

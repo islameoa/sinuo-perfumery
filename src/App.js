@@ -21,11 +21,12 @@ import Cookies from "./components/footer/Cookies";
 import { CartProvider } from "./components/cart/CartContext";
 import CartDrawer from "./components/cart/CartDrawer";
 import Checkout from "./components/cart/Checkout";
+import CookieBanner from "./components/cookies/CookieBanner";
+import CookieGate from "./components/cookies/CookieGate";
 
 function AppShell() {
   const location = useLocation();
   const first = useRef(true);
-
   const [isLoading, setIsLoading] = useState(true);
 
   function ScrollToTop() {
@@ -106,6 +107,8 @@ function App() {
     <CartProvider>
       <Router>
         <AppShell />
+        <CookieGate/>
+        <CookieBanner />
       </Router>
     </CartProvider>
   );

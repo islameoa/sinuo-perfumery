@@ -46,7 +46,7 @@ db.exec(`
 // -----------------------------
 const PRICE_TABLE_EUR = {
   "sinuo-diaspora__2ml": 9,
-  "sinuo-diaspora__100ml": 129,
+  "sinuo-diaspora__100ml": 119,
 };
 
 function itemKey(it) {

@@ -56,3 +56,13 @@ body {
   opacity: 0;
   transform: translate(-50%, -60%);
 }
+
+/* Evita que iframes de PayPal/Stripe se planten por encima de overlays (drawer/header) */
+.paypal-buttons,
+.paypal-buttons iframe,
+.__PrivateStripeElement,
+.__PrivateStripeElement iframe,
+iframe[title="PayPal"] {
+  position: relative !important;
+  z-index: 1 !important;
+}
