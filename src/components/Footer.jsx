@@ -32,7 +32,7 @@ const Section2 = () => {
   return (
       <div className='flex justify-end items-end'>
           <img className='w-24 mr-2' src="/assets/images/LogoDefBigWhite.svg" alt="Big logo of Sinuo" />
-          <p className="text-[3vw] sm:text-[1vw]">parfums © | 2025, All Rights Reserved</p>
+          <p className="text-[3vw] sm:text-[1vw]">parfums © | 2026, All Rights Reserved</p>
       </div>
   )
 }
