@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
 import { MeshTransmissionMaterial, useGLTF } from "@react-three/drei";
-import { useFrame } from "@react-three/fiber";
 
 export default function Model({ scale = 1 }) {
   const { nodes } = useGLTF("/assets/models/sinuo_bottle.glb");

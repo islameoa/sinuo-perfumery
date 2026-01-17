@@ -4,7 +4,6 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { height } from '../anim';
 import Body from './Body';
-import Footer from './Footer';
 import Image from './Image';
 
 const links = [
